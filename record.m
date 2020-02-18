@@ -1,4 +1,5 @@
-record_val = get(Var.record_hd, 'value');
+% record_val = get(Var.record_hd, 'value');
+record_val = 1;
 if record_val
     % record data
     Record.sim_time(Record.id) = Var.sim_time;

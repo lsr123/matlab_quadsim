@@ -28,7 +28,7 @@ global Var;
 % simulation time: s
 Var.sim_time = 0;
 % samping time: s
-Var.h = 0.004;
+Var.h = 0.005;
 
 % motor system, first order
 motor_sys = ss(tf(QuadrotorModel.Km, [QuadrotorModel.T, 1]));
@@ -37,6 +37,12 @@ motor_x_state = [0 0 0 0]';
 
 % gravity constant
 Var.g = [0; 0; 9.8];
+
+%仿真总时间
+Var.end_time = 5;
+
+%高度的代价函数值， 误差积分得到
+Var.alt_fitness = 0;
 
 % axes range
 Var.axis = [-3 3 -3 3 -3 0];
@@ -92,7 +98,8 @@ alt_adrc.s3 = 0;
 alt_adrc.v1 = 0;
 alt_adrc.v2 = 0;
 alt_adrc.r0 = 6;
-alt_adrc.b0 = (4*QuadrotorModel.cT*(QuadrotorModel.cR^2))/QuadrotorModel.mass;
+% alt_adrc.b0 = (4*QuadrotorModel.cT*(QuadrotorModel.cR^2))/QuadrotorModel.mass;
+% alt_adrc.b0 = 21.0266;
 alt_adrc.c = 0.5;
 alt_adrc.r = 100;
 alt_adrc.h1 = 10*alt_adrc.h;

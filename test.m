@@ -1,4 +1,4 @@
-%     % for testing
+    % for testing
 %     if Var.sim_time >= 3.2
 %         Var.sp_att(1) = 0/50*25/180*pi;
 %     elseif Var.sim_time >= 3
@@ -10,10 +10,14 @@
 %     end
 
 %     if Var.sim_time >= 3
-%         Var.sp_alt = -0.5;
-%     else
 %         Var.sp_alt = -1;
+% %     else
+% %         Var.sp_alt = -1;
 %     end
+    Var.sp_alt = -1;
+%     Var.sp_att(1) = 0;
+%     Var.sp_att(2) = 0;
+%     Var.sp_att(3) = 0;
 
 %     if Var.sim_time >=1 
 %         Var.sp_att(1) = 50/50*25/180*pi*sin(Var.sim_time/Var.h*pi/200);

@@ -1,3 +1,5 @@
+%将控件中的数值 与 变量 关联起来
+
 global Var;
 
 fig = figure('units','normalized','position',[.325 .1 .6 .8],'name','Quadrotor AUS','numbertitle','off','color','w');
@@ -50,7 +52,7 @@ Var.motor4_hd = uicontrol('units','normalized','position',[.71 .75 .08 .04],'sty
 uicontrol('units','normalized','position',[.61 .75 .1 .04],'style','text','fontsize',10,'string','motor 4:');
 
 Var.th_hd = uicontrol('units','normalized','position',[.9 .45 .08 .04],'style','text','fontsize',10,'HorizontalAlignment','left');
-uicontrol('units','normalized','position',[.8 .45 .1 .04],'style','text','fontsize',10,'string','sp alt:');
+uicontrol('units','normalized','position',[.8 .45 .1 .04],'style','text','fontsize',10,'string','spp alt:');
 uicontrol('units','normalized','Style', 'slider','Min',0,'Max',100,'Value',0,'Position', [.8 .4 .18 .04],'Callback', @th_cb);
 
 Var.sp_roll_hd = uicontrol('units','normalized','position',[.9 .35 .08 .04],'style','text','fontsize',10,'HorizontalAlignment','left');

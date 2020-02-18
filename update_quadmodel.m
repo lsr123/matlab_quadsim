@@ -4,7 +4,8 @@ function [ new_state ] = update_quadmodel( h, th, filter, model, state )
     
     global Var;
     
-    disturb_val = get(Var.disturb_hd, 'value');
+%     disturb_val = get(Var.disturb_hd, 'value');
+    disturb_val = Var.disturb_hd;
     
     % square angular velocity of motor
     w = model.cR*th + model.b;
@@ -59,7 +60,8 @@ function [ new_state ] = update_quadmodel( h, th, filter, model, state )
     state.velI = state.velI + h * state.accI;
     
     % constrain the position
-    fix_pos = get(Var.fix_pos_hd, 'value');
+%     fix_pos = get(Var.fix_pos_hd, 'value');
+    fix_pos = Var.fix_pos_hd;
     frame_size = 0.35;
     if state.posI(1)<Var.axis(1)+frame_size | state.posI(1)>Var.axis(2)-frame_size | fix_pos
         state.velI(1) = 0;

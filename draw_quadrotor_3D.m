@@ -1,4 +1,5 @@
 function  draw_quadrotor_3D( quad3D, state )
+%更新3D模型的状态
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
     global Var;
@@ -11,5 +12,6 @@ function  draw_quadrotor_3D( quad3D, state )
     set(quad3D.Rotor4.Obj,'xdata',quad3D.Rotor4.PosX,'ydata',quad3D.Rotor4.PosY,'zdata',quad3D.Rotor4.PosZ);
     set(Var.xline_hd, 'XData', [state.posI(1)-0.3 state.posI(1)+0.3], 'YData', [state.posI(2) state.posI(2)]);
     set(Var.yline_hd, 'XData', [state.posI(1) state.posI(1)], 'YData', [state.posI(2)-0.3 state.posI(2)+0.3]);
+    
 end
 

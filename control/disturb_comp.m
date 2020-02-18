@@ -1,4 +1,5 @@
-if Var.adrc_enable.Value == 1
+% if Var.adrc_enable.Value == 1
+if Var.adrc_enable == true
     % total disturbance compensation
     if Var.adrc_order == 3
         if Var.adrc_cleso == 1

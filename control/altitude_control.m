@@ -2,7 +2,8 @@ alt_td = adrc_td2(alt_td, Var.sp_alt);  % unit: rad
 alt_err = -(alt_td.v1 - QuadrotorState.posI(3));
 
 % pid
-if Var.adrc_enable.Value == 0
+% if Var.adrc_enable.Value == 0
+if Var.adrc_enable == false
     base_throttle = control_alt(alt_err, last_alt_err, Var.h);
     last_alt_err = alt_err;
 else
