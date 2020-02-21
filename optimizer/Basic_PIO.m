@@ -12,19 +12,21 @@
 clear 
 clear all
 
-T1=10;     %Global search algebra
-T2=10;     %Local search algebra
+T1=30;     %Global search algebra
+T2=20;     %Local search algebra
 pigeonnum=4;    %number 
-D=1;      % dimensionality
+D=2;      % 维度
 R=0.3;     %parameters of magnetic field 
-bound=[20,40];    %hunting zone
+bound=[20 40;
+       100 150];    %hunting zone  每一行 表示每一个维度的上下限
 %pp = 30;
 %ii = 10;
 f1=@fitness;   %代价函数
 %**************initialization of the individual pigeon************
+
 for i=1:pigeonnum
     for j=1:D
-        x(i,j)=bound(1)+rand*(bound(2)-bound(1));
+        x(i,j)=bound(j,1)+rand*(bound(j,2)-bound(j,1));
         v(i,j)=rand;
     end
 end
@@ -50,12 +52,12 @@ for t=1:T1
         x(i,:)=x(i,:)*(1-exp(-R*t))+v(i,:);   %check whether beyond the searching space
         for j=1:D                                    % magnetic field and solar operator
             if abs(i-1)<=eps
-                if x(i,j)<bound(1)||x(i,j)>bound(2)
-                    x(i,j)=bound(1)+rand*(bound(2)-bound(1));
+                if x(i,j)<bound(j,1)||x(i,j)>bound(j,2)
+                    x(i,j)=bound(j,1)+rand*(bound(j,2)-bound(j,1));
                     v(i,j)=rand;
                 end
             else
-                if x(i,j)<bound(1)||x(i,j)>bound(2)
+                if x(i,j)<bound(j,1)||x(i,j)>bound(j,2)
                     x(i,j)=x(i-1,j); 
                     v(i,j)=v(i-1,j);
                 end    
@@ -94,12 +96,12 @@ for t=1:T2
     for i=1:pigeonnum                                %local searching       
         for j=1:D                                    %check whether beyond the searching space
             if abs(i-1)<=eps
-                if x(i,j)<bound(1)||x(i,j)>bound(2)
-                    x(i,j)=bound(1)+rand*(bound(2)-bound(1));
+                if x(i,j)<bound(j,1)||x(i,j)>bound(j,2)
+                    x(i,j)=bound(j,1)+rand*(bound(2)-bound(j,1));
                     v(i,j)=rand;
                 end
             else
-                if x(i,j)<bound(1)||x(i,j)>bound(2)
+                if x(i,j)<bound(j,1)||x(i,j)>bound(j,2)
                     x(i,j)=x(i-1,j); 
                     v(i,j)=v(i-1,j);
                 end

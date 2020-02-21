@@ -4,7 +4,7 @@
 % 
 % clear all;  %     单独运行一遍仿真的时候，要clear
 % clc;          %优化时运行多遍，去掉clear
-
+tic
 global Var;
 
 %% initialization
@@ -70,7 +70,7 @@ while 1
   end
  
 end
-
+toc
   %改变控制器参数 
 %   if Var.sim_time > 6
 %    roll_adrc.beta1 = 104;
