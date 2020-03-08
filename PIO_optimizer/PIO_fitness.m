@@ -1,4 +1,4 @@
-function R = fitness(X,in)   %计算的是最小值
+function R = PIO_fitness(X,in)   %计算的是最小值
 
 % load_system('lsr')
 % set_param('lsr/Constant','Value',num2str(X(1)));

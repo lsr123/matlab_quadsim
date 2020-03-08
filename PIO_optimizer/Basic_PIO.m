@@ -21,7 +21,7 @@ bound=[20 40;
        100 150];    %hunting zone  每一行 表示每一个维度的上下限
 %pp = 30;
 %ii = 10;
-f1=@fitness;   %代价函数
+f1=@PIO_fitness;   %代价函数
 %**************initialization of the individual pigeon************
 
 for i=1:pigeonnum

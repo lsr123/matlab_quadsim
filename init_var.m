@@ -101,7 +101,8 @@ alt_adrc.r0 = 6;
 % alt_adrc.b0 = (4*QuadrotorModel.cT*(QuadrotorModel.cR^2))/QuadrotorModel.mass;
 % alt_adrc.b0 = 21.0266;
 alt_adrc.c = 0.5;
-alt_adrc.r = 100;
+% alt_adrc.r = 100;
+
 alt_adrc.h1 = 10*alt_adrc.h;
 % alt_adrc.w = 100;
 
